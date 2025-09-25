@@ -48,7 +48,7 @@ Create a .env file in the root directory and add in the OPENAI_API_KEY value
 To stop the running containers, press `Ctrl+C` in the terminal where Docker Compose is running
 
 
-## ⚙️ Technologies
+## Technologies
 
 - **[FastAPI](https://fastapi.tiangolo.com/)** — high-performance async Python web framework.  
 - **[SQLAlchemy](https://www.sqlalchemy.org/)** — ORM for database models and queries.  
@@ -58,7 +58,7 @@ To stop the running containers, press `Ctrl+C` in the terminal where Docker Comp
 
 ---
 
-## 📡 Architecture Overview
+## Architecture Overview
 
 ### REST Endpoints
 
@@ -93,6 +93,7 @@ For more information, you can view the docs at 127.0.0.1:8000/docs
 
 - Used mainly to scaffold the project and endpoints
 - Also used to generate the prompt for the open ai integration
+- Used for part of the Readme (technologies and endpoints)
 
 ### Time Taken
 
