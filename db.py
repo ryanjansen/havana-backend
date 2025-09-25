@@ -4,6 +4,7 @@ from sqlalchemy.sql import func
 from database import Base
 import enum
 
+
 class ChatStatus(str, enum.Enum):
     AI = "ai"
     HUMAN = "human"
@@ -21,7 +22,6 @@ class WSEvent(str, enum.Enum):
     NEW_MESSAGE = "new_message"
     ESCALATED = "escalated"
     CALL_BOOKED = "call_booked"
-    ADMIN_UPDATE="admin_update"
 
 
 class Chat(Base):

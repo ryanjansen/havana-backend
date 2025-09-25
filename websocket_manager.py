@@ -8,16 +8,13 @@ class ConnectionManager:
         self.active_connections: Dict[int, List[WebSocket]] = (
             {}
         )  # chat_id → list of websockets
-        self.admin_connections: List[WebSocket] = []
 
     async def connect(self, chat_id: int, websocket: WebSocket, role: Sender):
         await websocket.accept()
         if chat_id not in self.active_connections:
             self.active_connections[chat_id] = []
         self.active_connections[chat_id].append(websocket)
-        if role == Sender.ADMIN:
-            self.admin_connections.append(websocket)
-
+        
     def disconnect(self, chat_id: int, websocket: WebSocket):
         if chat_id in self.active_connections:
             self.active_connections[chat_id].remove(websocket)
@@ -26,8 +23,6 @@ class ConnectionManager:
         payload = {"event": event, "body": body}
         for connection in self.active_connections.get(chat_id, []):
             await connection.send_json(payload)
-        for admin_ws in self.admin_connections:
-            await admin_ws.send_json({"event": WSEvent.ADMIN_UDPATE, "body": payload})
 
 
 # singleton instance
