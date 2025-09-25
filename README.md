@@ -83,3 +83,14 @@ For more information, you can view the docs at 127.0.0.1:8000/docs
       "timestamp": "2025-09-25T12:34:56.000Z"
     }
   }
+  ```
+
+### AI Use
+
+- Used mainly to scaffold the project and endpoints
+- Also used to generate the prompt for the open ai integration
+
+### Time Taken
+
+- About 4 hours overall
+

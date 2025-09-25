@@ -36,16 +36,6 @@ async def get_ai_response(user_message: str, system_prompt: str = None):
                 "function": {
                     "name": "book_call",
                     "description": "Book a call with the admissions office.",
-                    "parameters": {
-                        "type": "object",
-                        "properties": {
-                            "datetime": {
-                                "type": "string",
-                                "description": "ISO 8601 datetime for the call booking",
-                            },
-                        },
-                        "required": ["datetime"],
-                    },
                 },
             },
         ],

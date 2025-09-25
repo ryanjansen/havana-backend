@@ -10,7 +10,7 @@ router = APIRouter()
 
 
 @router.post("/chats")
-def create_chat(db: Session = Depends(get_db)):
+async def create_chat(db: Session = Depends(get_db)):
     chat = Chat()
     db.add(chat)
     db.commit()
@@ -50,7 +50,7 @@ async def add_message(
 
     if chat.status == ChatStatus.AI and sender == Sender.USER:
         asyncio.create_task(process_ai_response(chat_id, content, db))
-      
+
 
 @router.get("/chats")
 def get_all_chats(db: Session = Depends(get_db)):

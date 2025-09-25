@@ -98,12 +98,11 @@ async def process_ai_response(chat_id: int, content: str, db: Session):
 
     if function_call:
         fn = function_call.function.name
-        args = json.loads(function_call.function.arguments)
 
         if fn == "escalate_to_human":
             return await escalate_to_human(chat_id, db)
 
         elif fn == "book_call":
-            return await book_call(chat_id, args["datetime"], db)
+            return await book_call(chat_id, db)
 
     return {"reply": ai_reply}
