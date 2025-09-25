@@ -35,7 +35,11 @@ This is the backend for the Trade School Chatbot project. It provides:
 
     This command will build and start the fastapi uvicorn server as defined in the `docker-compose.yml` file.
 
-3. **Access the application:**
+3. **Add a .env file**
+
+Create a .env file in the root directory and add in the OPENAI_API_KEY value 
+
+4. **Access the application:**
 
     - Once the containers are running, you can access the frontend at [http://localhost:5173](http://localhost:5173) and the backend API at [http://localhost:8000](http://localhost:8000).
 
